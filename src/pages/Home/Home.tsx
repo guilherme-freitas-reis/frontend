@@ -3,14 +3,14 @@ import Navbar from '../../components/Navbar/Navbar';
 import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
 
-import { Container } from './Home.styles';
+import { HomeContainer } from './styles/Home.styles';
 
 const Home: FC = () => (
-  <Container>
+  <HomeContainer>
     <Navbar />
     <Banner />
     <Footer />
-  </Container>
+  </HomeContainer>
 );
 
 export default Home;

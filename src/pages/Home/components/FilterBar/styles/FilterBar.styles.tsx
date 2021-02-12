@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const FilterBarContainer = styled.div`
   display: flex;
   position: absolute;
   z-index: 999;

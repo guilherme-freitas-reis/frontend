@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.nav`
+export const NavbarContainer = styled.nav`
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #00974a;
+  background: #00a85a;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 `;
 
@@ -80,5 +80,3 @@ export const ActionButton = styled.a`
 `;
 
 export const UserAvatar = styled.div``;
-
-export default {};

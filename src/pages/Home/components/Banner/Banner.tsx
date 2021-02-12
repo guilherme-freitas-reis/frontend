@@ -3,16 +3,16 @@ import FilterBar from '../FilterBar/FilterBar';
 
 import {
   Block,
-  Container,
+  BannerContainer,
   Title,
   SubTitle,
   AppsContainer,
   Apps,
   Image,
-} from './Banner.styles';
+} from './styles/Banner.styles';
 
 const Banner: FC = () => (
-  <Container className="container">
+  <BannerContainer className="container">
     <Block style={{ alignItems: 'flex-end' }}>
       <Title>
         Já pensou em alugar um carro
@@ -37,7 +37,7 @@ const Banner: FC = () => (
       <Image src="/images/background.png" />
     </Block>
     <FilterBar />
-  </Container>
+  </BannerContainer>
 );
 
 export default Banner;

@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { Container, FooterBar } from './Footer.styles';
+import { FooterContainer, FooterBar } from './styles/Footer.styles';
 
 const Footer: FC = () => (
-  <Container>
+  <FooterContainer>
     <FooterBar className="container">
       <p>@ Localiza - Todos os direitos reservados</p>
       <p>Política de uso de dados e termos de privacidade</p>
     </FooterBar>
-  </Container>
+  </FooterContainer>
 );
 
 export default Footer;

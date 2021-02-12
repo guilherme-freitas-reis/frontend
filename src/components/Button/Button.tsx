@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
-import { ButtonContainer } from './Button.styles';
+import { ButtonContainer } from './styles/Button.styles';
 
 export interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;

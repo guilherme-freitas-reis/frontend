@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.footer`
+export const FooterContainer = styled.footer`
   display: flex;
   flex: 1;
   background: #024430;
@@ -14,7 +14,7 @@ export const FooterBar = styled.div`
   justify-content: space-between;
   color: white;
   text-transform: uppercase;
-  background: #007e42;
+  background: #00a85a;
   font-size: .8rem;
   padding-top: 20px;
   padding-bottom: 20px;

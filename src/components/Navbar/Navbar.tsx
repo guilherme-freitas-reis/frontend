@@ -6,16 +6,16 @@ import {
   Action,
   ActionButton,
   ActionsContainer,
-  Container,
+  NavbarContainer,
   ListActions,
   Logo,
-} from './Navbar.styles';
+} from './styles/Navbar.styles';
 
 const Navbar: FC = () => {
   const [isLogged] = useState(false);
 
   return (
-    <Container className="container">
+    <NavbarContainer className="container">
       <Link href="/">
         <Logo src="/images/logo-nav.png" alt="Localiza Logo" />
       </Link>
@@ -50,7 +50,7 @@ const Navbar: FC = () => {
           </>
         )}
       </ActionsContainer>
-    </Container>
+    </NavbarContainer>
   );
 };
 

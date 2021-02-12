@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const BannerContainer = styled.main`
   display: flex;
-  background: #00974a;
+  background: #00a85a;
   height: auto;
   min-height: 55vh;
   position: relative;
