@@ -5,5 +5,3 @@ export const Container = styled.div`
   flex-direction: column;
   flex: 1;
 `;
-
-export default {};
