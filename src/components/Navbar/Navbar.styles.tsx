@@ -80,3 +80,5 @@ export const ActionButton = styled.a`
 `;
 
 export const UserAvatar = styled.div``;
+
+export default {};

@@ -24,3 +24,5 @@ export const FooterBar = styled.div`
     gap: 10px;
   }
 `;
+
+export default {};
