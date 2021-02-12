@@ -82,5 +82,3 @@ export const Image = styled.img`
   width: 100%;
   margin: auto 0 0 auto;
 `;
-
-export default {};

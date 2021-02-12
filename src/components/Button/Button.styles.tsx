@@ -35,5 +35,3 @@ export const ButtonContainer = styled.button<IButtonContainerProps>`
     cursor: default;
   }
 `;
-
-export default {};

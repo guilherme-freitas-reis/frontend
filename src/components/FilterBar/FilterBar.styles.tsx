@@ -66,5 +66,3 @@ export const ButtonSearch = styled.button`
     margin-top: 20px;
   }
 `;
-
-export default {};
