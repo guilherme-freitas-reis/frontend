@@ -5,7 +5,7 @@ import '../public/styles/global.css';
 
 export const decorators = [
   Story => (
-    <div style={{ margin: '1.5rem' }}>
+    <div style={{ margin: '2rem' }}>
       <Story />
     </div>
   ),
