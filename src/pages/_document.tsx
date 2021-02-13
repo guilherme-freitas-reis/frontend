@@ -1,7 +1,8 @@
 import Document, {
-  Head, Html, Main, NextScript,
+  Html, Main, NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import Head from '../components/Head/Head';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -31,7 +32,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head lang="pt-BR" />
+        <Head />
         <body>
           <Main />
           <NextScript />
