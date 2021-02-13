@@ -1,0 +1,11 @@
+.react-datepicker__header {
+  background-color: #018b3d !important;
+}
+.react-datepicker__day--keyboard-selected {
+  background-color: #018b3d !important;
+}
+.react-datepicker__input-container input {
+  border-radius: 1rem;
+  padding: 0.25rem;
+  text-align: center;
+}
