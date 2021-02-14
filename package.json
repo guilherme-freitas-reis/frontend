@@ -9,8 +9,8 @@
     "lint": "eslint ./**/*{.ts,.tsx}",
     "lint:fix": "eslint ./**/*{.ts,.tsx} --fix",
     "test": "jest --watch",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -s ./public -p 6006 -c .storybook",
+    "storybook:build": "build-storybook -s ./public -c .storybook -o .storybook-dist"
   },
   "dependencies": {
     "next": "^10.0.0",

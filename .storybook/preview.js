@@ -1,4 +1,15 @@
 import { themes } from '@storybook/theming';
+import '../public/styles/reset.css';
+import '../public/styles/global.css';
+
+
+export const decorators = [
+  Story => (
+    <div style={{ margin: '2rem' }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,7 +21,7 @@ export const parameters = {
     values: [
       {
         name: 'gray',
-        value: '#eee',
+        value: '#333',
       },
     ],
   },

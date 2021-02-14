@@ -1,0 +1,4 @@
+.next
+node_modules
+*.md
+src/**/**/*.test.js
