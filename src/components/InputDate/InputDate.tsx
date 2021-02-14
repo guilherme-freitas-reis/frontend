@@ -6,11 +6,20 @@ import { format } from 'date-fns';
 
 registerLocale('pt-BR', ptBr);
 
-const InputDate = () => {
+ interface Props {
+   placeholder:string
+ }
+
+const InputDate = ({ placeholder }:Props) => {
   const [date, setDate] = useState<Date>();
   const handleChange = (dateValue: Date) => {
     setDate(dateValue);
   };
+
+  const handleDateChangeRaw = (e) => {
+    e.preventDefault();
+  };
+
   return (
 
     <DatePicker
@@ -18,8 +27,9 @@ const InputDate = () => {
       locale="pt-BR"
       minDate={new Date()}
       showDisabledMonthNavigation
-      placeholderText="insira da data"
+      placeholderText={placeholder}
       onChange={handleChange}
+      onChangeRaw={handleDateChangeRaw}
     />
   );
 };
