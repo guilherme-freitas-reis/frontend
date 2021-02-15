@@ -7,10 +7,8 @@ import {
 import { Icon, InputContainer, InputWrapper } from './styles/Input.styles';
 
 export interface IInput extends InputHTMLAttributes<HTMLInputElement>{
-  type: 'text' | 'email' | 'password',
   iconBefore?: ReactNode
   iconAfter?: ReactNode
-  placeholder?: string,
   color?: string,
   backgroundColor?: string,
   onFocusBackgroundColor?: string,
@@ -18,11 +16,9 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 const Input: FC<IInput> = ({
-  type = 'text',
   color,
   iconBefore,
   iconAfter,
-  placeholder,
   placeholderColor = 'lightgray',
   onFocusBackgroundColor = 'white',
   backgroundColor = 'white',
@@ -38,8 +34,6 @@ const Input: FC<IInput> = ({
       {iconBefore && <Icon>{iconBefore}</Icon>}
       <InputContainer
         color={color}
-        type={type}
-        placeholder={placeholder}
         placeholderColor={placeholderColor}
         onFocus={isOnFocus}
         onBlur={isOnFocus}
