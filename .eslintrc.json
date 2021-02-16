@@ -27,10 +27,10 @@
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "linebreak-style": 0,
+    "linebreak-style": "off",
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": [
       1,
       {
