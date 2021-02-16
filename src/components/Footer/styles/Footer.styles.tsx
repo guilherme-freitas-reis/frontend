@@ -14,7 +14,6 @@ export const FooterContainer = styled.footer<IFooterContainer>`
 
 export const LogoLocaliza = styled.img`
   cursor: pointer;
-  height: 60px;
   width: auto;
   transition: 0.25s ease;
 
