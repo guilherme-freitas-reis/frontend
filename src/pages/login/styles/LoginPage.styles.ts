@@ -16,8 +16,7 @@ export const LoginPageWrapper = styled.div`
   }
 
   button {
-    width: 40px;
-    margin-top: 25px;
+    margin-top: 24px;
   }
 `;
 
@@ -26,6 +25,15 @@ export const LoginForm = styled.form`
   align-items: center;
   justify-content: center;
   flex-flow: column wrap;
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `;
 
 export const LogoImage = styled.img`

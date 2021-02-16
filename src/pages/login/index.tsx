@@ -21,11 +21,11 @@ const LoginPage: FC<ILoginPage> = () => (
     <h1>Fazer login</h1>
     <LoginForm>
       <Input
-        type="email"
+        type="number"
         color="black"
         backgroundColor="lightgray"
         onFocusBackgroundColor="white"
-        placeholder="Digite seu email..."
+        placeholder="Digite seu CPF..."
         placeholderColor="gray"
         iconBefore={<IoMailOutline size={20} />}
       />
@@ -38,7 +38,9 @@ const LoginPage: FC<ILoginPage> = () => (
         placeholderColor="gray"
         iconBefore={<IoKeyOutline size={20} />}
       />
-      <Button background="#cfd600">Entrar</Button>
+      <Button background="#cfd600">
+        Entrar
+      </Button>
     </LoginForm>
   </LoginPageWrapper>
 );
