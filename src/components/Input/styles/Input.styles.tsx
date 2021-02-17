@@ -17,13 +17,13 @@ export const InputWrapper = styled.div<IInputWrapper>`
   align-items: center;
   background-color: ${(props) => props.backgroundColor};
 
-  width: 300px;
-  margin: 10px;
+  width: 100%;
+  margin: 10px 0;
   padding: 10px;
 
-  box-shadow: -1px 2px 4px rgba(0,0,0,0.4);
+  box-shadow: -1px 2px 4px rgba(0,0,0,0.2);
   border-radius: 3px;
-  
+
   transition: 0.25s ease;
 `;
 

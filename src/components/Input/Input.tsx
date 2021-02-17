@@ -19,7 +19,7 @@ const Input: FC<IInput> = ({
   color,
   iconBefore,
   iconAfter,
-  placeholderColor = 'lightgray',
+  placeholderColor = '#999',
   onFocusBackgroundColor = 'white',
   backgroundColor = 'white',
   ...rest
