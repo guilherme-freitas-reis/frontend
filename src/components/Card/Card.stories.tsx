@@ -56,3 +56,12 @@ SemBotao.args = {
   description: 'Veículo similar a: Fiat Uno 1.0, dentre outros.',
   comment: 'Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência.',
 };
+
+export const Preco = Template.bind({});
+SemBotao.args = {
+  title: 'Econômico',
+  image: 'https://www.localiza.com/brasil-site/geral/Frota/NUNS.png',
+  description: 'Veículo similar a: Fiat Uno 1.0, dentre outros.',
+  comment: 'Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência.',
+  price: 500,
+};

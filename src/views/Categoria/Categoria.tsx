@@ -12,6 +12,7 @@ interface Carro{
   motor: string
   imagem: string
   nome: string
+  price: number
 }
 
 interface IProps {
@@ -28,7 +29,8 @@ function Categoria({ carList, categoryName }: IProps) {
             <Card
               title={car.nome}
               image={car.imagem}
-              description={`Valor da Diária: ${car.valorDaria}`}
+              description={`Combustivel ${car.combustivel}, Potencia ${car.motor}`}
+              price={car.valorDaria}
               buttonTitle="Reserva"
               buttonLink="/reserva"
             />
