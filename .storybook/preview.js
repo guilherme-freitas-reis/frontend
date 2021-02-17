@@ -1,6 +1,7 @@
 import { themes } from '@storybook/theming';
 import '../public/styles/reset.css';
 import '../public/styles/global.css';
+import '../src/components/InputDate/styles.css';
 
 
 export const decorators = [
