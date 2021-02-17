@@ -61,16 +61,6 @@
       "imagem":"/utils/img/virtus.png"
   },
     {
-      "nome":"Cobalt",
-      "placa":"FFF5256",
-      "combustivel":"flex",
-      "valorDaria":180,
-      "portamalas":400,
-      "montadora":"Chevrolet",
-      "motor":"1.6",
-      "imagem":"/utils/img/cobalt.png"
-    },
-    {
       "nome":"Versa",
       "placa":"HoK5912",
       "combustivel":"flex",
