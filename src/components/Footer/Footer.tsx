@@ -17,7 +17,7 @@ const Footer: FC<IFooter> = ({
   color = 'white',
   backgroundColor = '#023b2a',
 }) => (
-  <FooterContainer color={color} backgroundColor={backgroundColor}>
+  <FooterContainer className="container" color={color} backgroundColor={backgroundColor}>
     <LeftContent>
       <Link href="/">
         <LogoLocaliza
