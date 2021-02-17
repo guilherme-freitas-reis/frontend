@@ -1,19 +1,15 @@
-{
-  
-    "categorias":
+
     [
       {
-      "nome":"Basico",
-      "Id":1
+      "name":"basico",
+      "id":1
       },
     {
-        "nome":"executivo",
-        "Id":2
+        "name":"executivo",
+        "id":2
       },
       {
-        "nome":"premium",
-        "Id":3
+        "name":"premium",
+        "id":3
         }
     ]
-
-}

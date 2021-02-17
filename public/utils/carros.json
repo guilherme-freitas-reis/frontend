@@ -1,6 +1,5 @@
 {
-  "categorias":{
-  "1":[
+  "carros":[
     {
       "nome":"Moby",
       "placa":"PUA1049",
@@ -9,132 +8,128 @@
       "portamalas":200,
       "montadora":"fiat",
       "motor":"1.0",
-      "imagem":"./img/moby.png"
+      "imagem":"/utils/img/moby.png"
     },
     {
-      "nome":"gol",
+      "nome":"Gol",
       "placa":"FFF5256",
       "combustivel":"flex",
       "valorDaria":150,
       "portamalas":210,
       "montadora":"VW",
       "motor":"1.0",
-      "imagem":"./img/gol.png"
+      "imagem":"/utils/img/gol.png"
       },
       {
-        "nome":"hb20",
+        "nome":"Hb-20",
         "placa":"HoK5912",
         "combustivel":"flex",
         "valorDaria":150,
         "portamalas":180,
         "montadora":"Chevrolet",
         "motor":"1.0",
-        "imagem":"./img/hb20.png" 
-      },  
+        "imagem":"/utils/img/hb20.png"
+      },
       {
-        "nome":"saveiro",
+        "nome":"Saveiro",
         "placa":"OMF 5162",
         "combustivel":"flex",
         "valorDaria":150,
         "portamalas":"utilitario",
         "montadora":"VW",
         "motor":"1.6",
-        "imagem":"./img/saveiro.png" 
-      }, 
+        "imagem":"/utils/img/saveiro.png"
+      },
       {
-        "nome":"voyage",
+        "nome":"Voyage",
         "placa":"PUT4971",
         "combustivel":"flex",
         "valorDaria":150,
         "portamalas":300,
         "montadora":"Vw",
         "motor":"1.0",
-        "imagem":"./img/voyage.png"
-      }       
-    ],
-  "2": [
+        "imagem":"/utils/img/voyage.png"
+      },
     {
-      "nome":"virtus",
+      "nome":"Virtus",
       "placa":"PUA1049",
       "combustivel":"flex",
       "valorDaria":180,
       "portamalas":380,
       "montadora":"VW",
       "motor":"1.4",
-      "imagem":"./img/virtus.png"
+      "imagem":"/utils/img/virtus.png"
   },
     {
-      "nome":"cobalt",
+      "nome":"Cobalt",
       "placa":"FFF5256",
       "combustivel":"flex",
       "valorDaria":180,
       "portamalas":400,
       "montadora":"Chevrolet",
       "motor":"1.6",
-      "imagem":"./img/cobalt.png"
+      "imagem":"/utils/img/cobalt.png"
     },
     {
-      "nome":"versa",
+      "nome":"Versa",
       "placa":"HoK5912",
       "combustivel":"flex",
       "valorDaria":180,
       "portamalas":350,
       "montadora":"nissan",
       "motor":"2.0",
-      "imagem":"./img/versa.png" 
-    },  
+      "imagem":"/utils/img/versa.png"
+    },
     {
-      "nome":"eco sport",
+      "nome":"Eco sport",
       "placa":"OMF 5162",
       "combustivel":"flex",
       "valorDaria":180,
       "portamalas":"300",
       "montadora":"Ford",
       "motor":"1.6",
-      "imagem":"./img/eco sport.png" 
-    }, 
+      "imagem":"/utils/img/eco sport.png"
+    },
     {
-      "nome":"polo",
+      "nome":"Polo",
       "placa":"PUT4971",
       "combustivel":"flex",
       "valorDaria":180,
       "portamalas":250,
       "montadora":"Vw",
       "motor":"1.4",
-      "imagem":"./img/polo.png"
-    }   
-  ],
-  "3":[
+      "imagem":"/utils/img/polo.png"
+    },
     {
-      "nome":"toro",
+      "nome":"Toro",
       "placa":"PUA1049",
       "combustivel":"Diesel",
       "valorDaria":250,
       "portamalas":"utilitario",
       "montadora":"Fiat",
       "motor":"2.0",
-      "imagem":"./img/toro.png"
+      "imagem":"/utils/img/toro.png"
   },
     {
-      "nome":"hyllux",
+      "nome":"Hyllux",
       "placa":"FFF5256",
       "combustivel":"Diesel",
       "valorDaria":300,
       "portamalas":"utilitario",
       "montadora":"Toyota",
       "motor":"3.2",
-      "imagem":"./img/hyllux.png"
+      "imagem":"/utils/img/hyllux.png"
     },
     {
-      "nome":"compass",
+      "nome":"Compass",
       "placa":"HoK5912",
       "combustivel":"flex",
       "valorDaria":300,
       "portamalas":350,
       "montadora":"Jeep",
       "motor":"2.0",
-      "imagem":"./img/compass.png" 
-    },  
+      "imagem":"/utils/img/compass.png"
+    },
     {
       "nome":"x1",
       "placa":"OMF 5162",
@@ -143,8 +138,8 @@
       "portamalas":"380",
       "montadora":"Bmw",
       "motor":"2.2",
-      "imagem":"./img/x1.png" 
-    }, 
+      "imagem":"/utils/img/x1.png"
+    },
     {
       "nome":"golf",
       "placa":"PUT4971",
@@ -153,12 +148,7 @@
       "portamalas":250,
       "montadora":"Vw",
       "motor":"1.4",
-      "imagem":"./img/golf.png"
+      "imagem":"/utils/img/golf.png"
     }
-  ]  
-
-  }
-
-  
-
+  ]
 }
