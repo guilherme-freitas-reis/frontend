@@ -5,3 +5,9 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   flex: 1;
 `;
+
+export const GreenBar = styled.div`
+  display: flex;
+  flex: 1;
+  background: #023b2a;
+`;
