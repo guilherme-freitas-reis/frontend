@@ -1,16 +1,13 @@
 import { FC } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import Layout from '../Layout/Layout';
 import Banner from './components/Banner/Banner';
-import Footer from './components/Footer/Footer';
-
-import { HomeContainer } from './styles/Home.styles';
+import { GreenBar } from './styles/Home.styles';
 
 const Home: FC = () => (
-  <HomeContainer>
-    <Navbar />
+  <Layout>
     <Banner />
-    <Footer />
-  </HomeContainer>
+    <GreenBar />
+  </Layout>
 );
 
 export default Home;
