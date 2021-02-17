@@ -8,7 +8,7 @@ interface ICardContainerProps {
 export const ContainerCard = styled.article<ICardContainerProps>`
   display: flex;
   width: ${(props) => props.width};
-  max-width: 340px;
+  min-width: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,13 @@ export const ContainerCard = styled.article<ICardContainerProps>`
   background: ${(props) => props.background};
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+  margin: 20px 1%;
+
+  @media(max-width: 768px) {
+    width: 100%;
+    max-width: unset;
+    min-width: unset;
+  }
 `;
 
 export const Title = styled.h1`

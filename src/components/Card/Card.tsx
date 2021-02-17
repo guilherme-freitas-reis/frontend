@@ -1,5 +1,5 @@
 import { FC, HtmlHTMLAttributes } from 'react';
-import Button from '../Button/Button';
+import CardLink from './components/CardLink/CardLink';
 
 import {
   ContainerCard,
@@ -15,34 +15,27 @@ export interface IProps extends HtmlHTMLAttributes<HTMLElement> {
   description: string;
   comment?: string;
   buttonTitle?: string;
+  buttonLink?: string;
   width?: string;
   background?: string;
 }
 
 const Card: FC<IProps> = ({
-  width = '33%',
+  width = '31%',
   background = '#ffffff',
   title,
   image,
   description,
   comment,
   buttonTitle,
+  buttonLink,
 }) => (
   <ContainerCard width={width} background={background}>
     {title && <Title>{title}</Title>}
     {image && <Image src={image} alt={title} />}
     <Description>{description}</Description>
     {comment && <Comment>{comment}</Comment>}
-    {buttonTitle && (
-      <Button
-        block
-        background="#d4db26"
-        color="#004a34"
-        style={{ textTransform: 'uppercase', marginTop: 30 }}
-      >
-        {buttonTitle}
-      </Button>
-    )}
+    {buttonLink && <CardLink href={buttonLink}>{buttonTitle}</CardLink>}
   </ContainerCard>
 );
 
