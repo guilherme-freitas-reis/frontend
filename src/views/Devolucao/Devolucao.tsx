@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { FC, useState } from 'react';
+import { store } from 'react-notifications-component';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
 import Panel from '../../components/Panel/Panel';
@@ -22,11 +23,29 @@ const Devolucao: FC = () => {
     e.preventDefault();
 
     if (carroLimpo === null || tanqueCheio === null || amassados === null) {
-      alert('Preencha todos os campos do formulário');
+      store.addNotification({
+        title: 'Ops!',
+        message: 'Preencha todos os campos e tente novamente.',
+        type: 'warning',
+        container: 'bottom-right',
+        dismiss: {
+          duration: 3500,
+          onScreen: true,
+        },
+      });
       return;
     }
 
-    alert('Formulário enviado');
+    store.addNotification({
+      title: 'Sucesso!',
+      message: 'A devolução foi realizada.',
+      type: 'success',
+      container: 'bottom-right',
+      dismiss: {
+        duration: 3500,
+        onScreen: true,
+      },
+    });
   }
 
   return (
