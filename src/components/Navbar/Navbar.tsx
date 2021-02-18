@@ -12,7 +12,7 @@ import {
 } from './styles/Navbar.styles';
 
 const Navbar: FC = () => {
-  const [isLogged] = useState(true);
+  const [isLogged] = useState(false);
   const [isOperador] = useState(false);
 
   return (

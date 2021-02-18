@@ -17,13 +17,13 @@ export const InputWrapper = styled.div<IInputWrapper>`
   align-items: center;
   background-color: ${(props) => props.backgroundColor};
 
-  width: 300px;
+  width: 100%;
   margin: 10px;
   padding: 10px;
 
-  box-shadow: -1px 2px 4px rgba(0,0,0,0.4);
+  box-shadow: -1px 2px 4px rgba(0,0,0,0.2);
   border-radius: 3px;
-  
+
   transition: 0.25s ease;
 `;
 
@@ -44,9 +44,6 @@ export const InputContainer = styled.input<IInputContainer>`
     color: ${(props) => props.placeholderColor};
   }
 
-  &:focus {
-    border-bottom: 1px solid gray;
-  }
 `;
 
 export const Icon = styled.span`
