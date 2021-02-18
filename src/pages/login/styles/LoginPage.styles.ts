@@ -15,11 +15,31 @@ export const LoginPageWrapper = styled.div`
     margin-bottom: 20px;
   }
 
+  button {
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+`;
+
+export const SignUpText = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   h2 {
     color: white;
     font-size: 16px;
     font-weight: 400px;
     margin: 12px;
+  }
+
+  a {
+    color: #d4db26;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
