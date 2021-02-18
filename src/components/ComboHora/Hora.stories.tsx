@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Hora from './Hora';
 
 export default {
-  title: 'InputDate',
+  title: 'ComboHora',
   component: Hora,
 } as Meta;
 
