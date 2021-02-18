@@ -1,5 +1,7 @@
-import { FC, HtmlHTMLAttributes } from 'react';
-import Button from '../Button/Button';
+// eslint-disable-next-line no-use-before-define
+import React, { FC, HtmlHTMLAttributes } from 'react';
+import CardLink from './components/CardLink/CardLink';
+import Price from './components/Price/Price';
 
 import {
   ContainerCard,
@@ -15,34 +17,30 @@ export interface IProps extends HtmlHTMLAttributes<HTMLElement> {
   description: string;
   comment?: string;
   buttonTitle?: string;
+  buttonLink?: string;
   width?: string;
   background?: string;
+  price?:number;
 }
 
 const Card: FC<IProps> = ({
-  width = '33%',
+  width = '31%',
   background = '#ffffff',
   title,
   image,
   description,
   comment,
   buttonTitle,
+  buttonLink,
+  price,
 }) => (
   <ContainerCard width={width} background={background}>
     {title && <Title>{title}</Title>}
     {image && <Image src={image} alt={title} />}
     <Description>{description}</Description>
     {comment && <Comment>{comment}</Comment>}
-    {buttonTitle && (
-      <Button
-        block
-        background="#d4db26"
-        color="#004a34"
-        style={{ textTransform: 'uppercase', marginTop: 30 }}
-      >
-        {buttonTitle}
-      </Button>
-    )}
+    {price && <Price price={price} />}
+    {buttonLink && <CardLink href={buttonLink}>{buttonTitle}</CardLink>}
   </ContainerCard>
 );
 
