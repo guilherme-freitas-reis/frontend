@@ -6,6 +6,8 @@ const api: AxiosInstance = axios.create({
   headers: {
     Authorization: cookie.load('localiza-auth') || '',
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+    'Content-Type': 'application/json',
   },
 });
 
