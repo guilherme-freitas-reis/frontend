@@ -13,7 +13,7 @@ import {
 
 const Navbar: FC = () => {
   const [isLogged] = useState(true);
-  const [isOperador] = useState(false);
+  const [isOperador] = useState(true);
 
   return (
     <NavbarContainer className="container">

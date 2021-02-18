@@ -22,3 +22,9 @@
   border-radius: 5px;
 }
 
+@media(max-width: 768px) {
+  .react-datepicker__input-container input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
