@@ -21,7 +21,7 @@ const LoginPage: FC<ILoginPage> = () => (
     <h1>Fazer login</h1>
     <LoginForm>
       <Input
-        type="number"
+        type="text"
         color="black"
         backgroundColor="lightgray"
         onFocusBackgroundColor="white"
@@ -40,6 +40,10 @@ const LoginPage: FC<ILoginPage> = () => (
       />
       <Button background="#cfd600">
         Entrar
+      </Button>
+      <h2>Não é cadastrado?</h2>
+      <Button background="#cfd600">
+        Cadastrar
       </Button>
     </LoginForm>
   </LoginPageWrapper>

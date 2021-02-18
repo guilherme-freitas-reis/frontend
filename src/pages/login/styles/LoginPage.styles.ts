@@ -15,8 +15,11 @@ export const LoginPageWrapper = styled.div`
     margin-bottom: 20px;
   }
 
-  button {
-    margin-top: 24px;
+  h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 400px;
+    margin: 12px;
   }
 `;
 
@@ -26,14 +29,14 @@ export const LoginForm = styled.form`
   justify-content: center;
   flex-flow: column wrap;
 
-  input[type="number"] {
+  /* input[type="number"] {
     -moz-appearance: textfield;
   }
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-  }
+  } */
 `;
 
 export const LogoImage = styled.img`
