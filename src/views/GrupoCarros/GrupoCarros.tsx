@@ -8,7 +8,7 @@ const GrupoCarros: FC = () => (
   <Layout>
     <Panel
       title="Grupo de Carros"
-      subTitle="Selecione o grupo de carros que você deseja"
+      subTitle="Selecione o melhor grupo de carros para você"
     >
       <CategoriasList>
         <Card

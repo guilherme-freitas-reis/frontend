@@ -63,6 +63,6 @@ export const ButtonSearch = styled.button`
   @media (max-width: 768px) {
     width: 100%;
     height: 60px;
-    margin-top: 20px;
+    margin-top: 0;
   }
 `;
