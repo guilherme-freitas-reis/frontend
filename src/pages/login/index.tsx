@@ -3,10 +3,15 @@ import { FC } from 'react';
 import { IoMailOutline, IoKeyOutline } from 'react-icons/io5';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import { LoginForm, LoginPageWrapper, LogoImage } from './styles/LoginPage.styles';
+import {
+  LoginForm,
+  LoginPageWrapper,
+  LogoImage,
+  SignUpText,
+} from './styles/LoginPage.styles';
 
 interface ILoginPage {
-  dummy: string,
+  dummy: string;
 }
 
 const LoginPage: FC<ILoginPage> = () => (
@@ -38,13 +43,11 @@ const LoginPage: FC<ILoginPage> = () => (
         placeholderColor="gray"
         iconBefore={<IoKeyOutline size={20} />}
       />
-      <Button background="#cfd600">
-        Entrar
-      </Button>
-      <h2>Não é cadastrado?</h2>
-      <Button background="#cfd600">
-        Cadastrar
-      </Button>
+      <Button background="#cfd600">Entrar</Button>
+      <SignUpText>
+        <h2>Ainda não tem uma conta?</h2>
+        <Link href="/criar-conta">Cadastre-se.</Link>
+      </SignUpText>
     </LoginForm>
   </LoginPageWrapper>
 );
