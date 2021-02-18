@@ -1,16 +1,16 @@
 import { FC } from 'react';
+import InputDate from '../../../../components/InputDate/InputDate';
 import {
   ButtonSearch,
   FilterBarContainer,
   Form,
-  InputFake,
 } from './styles/FilterBar.styles';
 
 const FilterBar: FC = () => (
   <FilterBarContainer className="container">
     <Form method="GET">
-      <InputFake placeholder="📅 Data de Retirada" type="text" />
-      <InputFake placeholder="📅 Data de Devolução" type="text" />
+      <InputDate placeholder="📅 Data de Retirada" />
+      <InputDate placeholder="📅 Data de Devolução" />
       <ButtonSearch>Buscar</ButtonSearch>
     </Form>
   </FilterBarContainer>

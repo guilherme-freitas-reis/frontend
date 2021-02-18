@@ -17,7 +17,7 @@ const Navbar: FC = () => {
   return (
     <NavbarContainer className="container">
       <Link href="/">
-        <Logo src="/images/logo-nav.png" alt="Localiza Logo" />
+        <Logo src={`${process.env.NEXT_PUBLIC_URL}/images/logo-nav.png`} alt="Localiza Logo" />
       </Link>
       <ActionsContainer>
         <ListActions>
