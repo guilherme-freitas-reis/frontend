@@ -13,7 +13,7 @@ const LoginPage: FC<ILoginPage> = () => (
   <LoginPageWrapper>
     <Link href="/">
       <LogoImage
-        src="/images/localiza-logo-tp.png"
+        src="/images/og-image-tp-wt.png"
         alt="localiza-logo"
         height="40px"
       />

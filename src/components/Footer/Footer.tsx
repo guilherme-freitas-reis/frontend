@@ -23,7 +23,7 @@ const Footer: FC<IFooter> = ({
         <LogoLocaliza
           src="/images/localiza-logo-tp.png"
           alt="localiza-logo"
-          height="40px"
+          height="30px"
         />
       </Link>
       <Link href="alugar">

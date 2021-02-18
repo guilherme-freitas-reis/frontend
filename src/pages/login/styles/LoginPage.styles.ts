@@ -40,6 +40,5 @@ export const LogoImage = styled.img`
   width: auto;
   margin-top: 30px;
   margin-bottom: 60px;
-  filter: brightness(1.4);
   cursor: pointer;
 `;

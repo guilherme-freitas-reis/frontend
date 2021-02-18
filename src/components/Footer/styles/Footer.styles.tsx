@@ -16,6 +16,7 @@ export const LogoLocaliza = styled.img`
   cursor: pointer;
   width: auto;
   transition: 0.25s ease;
+  margin: 12px 0 12px 0;
 
   &:hover {
     filter: brightness(1.25);
