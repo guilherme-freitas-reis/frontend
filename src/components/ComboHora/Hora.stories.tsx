@@ -6,6 +6,6 @@ export default {
   component: Hora,
 } as Meta;
 
-const Template: Story = () => <Hora />;
+const Template: Story = () => <Hora onChange={(() => {})} value="10:00" />;
 
 export const Padrao = Template.bind({});

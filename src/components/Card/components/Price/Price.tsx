@@ -4,13 +4,14 @@ import { StylePrice, StyleTextPrice, Container } from './StylesPrice';
 
 export interface IProps extends HtmlHTMLAttributes<HTMLElement> {
   price?:number;
+  textPrice:string
 }
 
-function PriceConverter({ price }: IProps) {
+function PriceConverter({ price, textPrice }: IProps) {
   return (
     <Container>
       <StyleTextPrice>
-        Valor da diária
+        {textPrice}
       </StyleTextPrice>
       <StylePrice>
         { price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}

@@ -2,22 +2,11 @@ import Card from '../../components/Card/Card';
 import { ContainerCard } from './StylesCategoria';
 import Layout from '../Layout/Layout';
 import Panel from '../../components/Panel/Panel';
-
-interface Carro{
-  placa: string
-  combustivel: string
-  valorDaria: number
-  portamalas: number
-  montadora: string
-  motor: string
-  imagem: string
-  nome: string
-  price: number
-}
+import { CarDetails } from '../../services/api';
 
 interface IProps {
   categoryName: string,
-  carList: Carro[]
+  carList: CarDetails[]
 }
 
 function Categoria({ carList, categoryName }: IProps) {
@@ -27,12 +16,12 @@ function Categoria({ carList, categoryName }: IProps) {
         <ContainerCard>
           { carList.map((car) => (
             <Card
-              title={car.nome}
+              title={car.modelo}
               image={car.imagem}
-              description={`Combustivel ${car.combustivel}, Potencia ${car.motor}`}
-              price={car.valorDaria}
-              buttonTitle="Reserva"
-              buttonLink="/reserva"
+              description={`Combustivel ${car.tipoDeCombustivel}, Potencia ${car.tipoVeiculoDescricao}`}
+              price={car.valorHora}
+              buttonTitle="Simular Reserva"
+              buttonLink={`/simulacao/${car.id}`}
             />
           ))}
         </ContainerCard>
