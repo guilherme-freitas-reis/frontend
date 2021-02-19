@@ -18,7 +18,13 @@ export const ContainerCard = styled.article<ICardContainerProps>`
   box-shadow: 2px 2px 5px rgba(0,0,0,.1);
   margin: 20px 1%;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1200px) {
+    width: 48%;
+    max-width: unset;
+    min-width: unset;
+  }
+
+  @media(max-width: 600px) {
     width: 100%;
     max-width: unset;
     min-width: unset;
