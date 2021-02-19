@@ -18,7 +18,7 @@ export const InputWrapper = styled.div<IInputWrapper>`
   background-color: ${(props) => props.backgroundColor};
 
   width: 100%;
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
 
   box-shadow: -1px 2px 4px rgba(0,0,0,0.2);
