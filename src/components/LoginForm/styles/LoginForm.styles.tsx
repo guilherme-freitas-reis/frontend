@@ -7,6 +7,7 @@ export const Container = styled.form`
   flex-direction: column;
   background-color: #ffffff;
   padding: 25px;
+  margin: 25px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.1);
   min-width: 450px;
   /* input[type="number"] {
