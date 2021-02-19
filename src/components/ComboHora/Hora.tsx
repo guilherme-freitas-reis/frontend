@@ -9,21 +9,18 @@ const InputHora = () => {
     setSelectOption(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log(selectOption);
-  };
+  // // const handleSubmit = () => {
+  //   console.log(selectOption);
+  // };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Select value={selectOption} onChange={handleChange}>
-        {
-          ListHoras.map((hora) => (
-            <option value={hora.id}>{hora.repe}</option>
-          ))
-        }
-      </Select>
-      <input type="submit" value="enviar" />
-    </form>
+    <Select value={selectOption} onChange={handleChange}>
+      {
+        ListHoras.map((hora) => (
+          <option value={hora.id}>{hora.repe}</option>
+        ))
+      }
+    </Select>
   );
 };
 
