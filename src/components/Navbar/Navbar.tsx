@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useContext } from 'react';
 import Link from 'next/link';
 import { IoPersonAddSharp, IoCarSharp } from 'react-icons/io5';
 
@@ -10,10 +10,10 @@ import {
   ListActions,
   Logo,
 } from './styles/Navbar.styles';
+import { Context } from '../../contexts/AuthContext';
 
 const Navbar: FC = () => {
-  const [isLogged] = useState(false);
-  const [isOperador] = useState(false);
+  const { authenticated, isOperador, handleLogout } = useContext(Context);
 
   return (
     <NavbarContainer className="container">
@@ -30,12 +30,19 @@ const Navbar: FC = () => {
             <Link href="/grupo-de-carros ">
               <a title="Grupo de Carros">grupo de carros</a>
             </Link>
-            <Link href="/criar-conta">
-              <a title="Crie sua conta">crie sua conta</a>
-            </Link>
+
+            {authenticated ? (
+              <Link href="/">
+                <a onClick={handleLogout} title="Sair da Conta">sair da conta</a>
+              </Link>
+            ) : (
+              <Link href="/criar-conta">
+                <a title="Crie sua conta">crie sua conta</a>
+              </Link>
+            )}
           </Action>
         </ListActions>
-        {isLogged ? (
+        {authenticated ? (
           <>
             {isOperador ? (
               <Link href="/reservas/gerenciar">
