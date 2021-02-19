@@ -1,19 +1,20 @@
 import DatePicker, { registerLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ptBr from 'date-fns/locale/pt-BR';
-import { useState } from 'react';
 import { format } from 'date-fns';
 
 registerLocale('pt-BR', ptBr);
 
 interface Props {
   placeholder:string
+  value: Date;
+  // eslint-disable-next-line no-unused-vars
+  onChange: (arg: Date) => void;
 }
 
-const InputDate = ({ placeholder }:Props) => {
-  const [date, setDate] = useState<Date>();
+const InputDate = ({ placeholder, value, onChange }:Props) => {
   const handleChange = (dateValue: Date) => {
-    setDate(dateValue);
+    onChange(dateValue);
   };
 
   const handleDateChangeRaw = (e) => {
@@ -23,7 +24,7 @@ const InputDate = ({ placeholder }:Props) => {
   return (
 
     <DatePicker
-      value={date && format(date, 'dd/MM/yyyy')}
+      value={value && format(value, 'dd/MM/yyyy')}
       locale="pt-BR"
       minDate={new Date()}
       showDisabledMonthNavigation

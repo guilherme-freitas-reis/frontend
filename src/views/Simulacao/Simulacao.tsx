@@ -1,11 +1,13 @@
 // eslint-disable-next-line no-use-before-define
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
-import InputHora from '../../components/ComboHora/Hora';
-import InputDate from '../../components/InputDate/InputDate';
+import Price from '../../components/Card/components/Price/Price';
+import InputCalculoReserva from '../../components/InputCadastro/InputCalculoReserva';
 import Panel from '../../components/Panel/Panel';
-import { CarDetails } from '../../services/api';
+import {
+  api, ApiCalls, CarDetails, SimulationRequestBody, SimulationResponse,
+} from '../../services/api';
 import Layout from '../Layout/Layout';
 import {
   ButtonContainer,
@@ -18,8 +20,23 @@ interface IProps {
 }
 
 const SimulacaoReserva = ({ carDetails }:IProps) => {
-  const handleSubmit = () => {
+  const [dataRetirada, setDataRetirada] = useState<Date>();
+  const [dataDevolucao, setDataDevolucao] = useState<Date>();
+  const [simulationValue, setSimulationValue] = useState<SimulationResponse>();
 
+  const getSimulation = async () => {
+    const requestBody: SimulationRequestBody = {
+      veiculoId: carDetails.id,
+      entrada: dataRetirada.toISOString(),
+      saida: dataDevolucao.toISOString(),
+    };
+    const res = await api.post(ApiCalls.sendSimulation, requestBody);
+    const simulationResult: SimulationResponse = res.data;
+    setSimulationValue(simulationResult);
+  };
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    getSimulation();
   };
   return (
     <Layout>
@@ -34,13 +51,30 @@ const SimulacaoReserva = ({ carDetails }:IProps) => {
             description={carDetails.tipoVeiculoDescricao}
             comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
           />
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <div>
-              <InputDate placeholder=" 📅 Data de Retirada" />
-              <InputHora />
+              <InputCalculoReserva
+                value={dataRetirada}
+                onChange={setDataRetirada}
+                title="Data de Retirada"
+                placeholder="Insira a  data de retirada"
+              />
+              {dataRetirada && (
+                <InputCalculoReserva
+                  value={dataDevolucao}
+                  onChange={setDataDevolucao}
+                  title="Data de Devolução"
+                  placeholder="Insira a  data de devolução"
+                />
+              )}
             </div>
+            {simulationValue && (
+              <Price textPrice="Valor da Reserva" price={simulationValue.valorSimulado} />
+            )}
             <ButtonContainer>
-              <Button block>Reservar</Button>
+              <Button disabled={!dataDevolucao} onClick={handleClick} block>
+                { !simulationValue ? 'Simular Reserva' : 'Reservar'}
+              </Button>
             </ButtonContainer>
           </Form>
         </ContainerForm>

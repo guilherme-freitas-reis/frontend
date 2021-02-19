@@ -39,7 +39,7 @@ const Card: FC<IProps> = ({
     {image && <Image src={image} alt={title} />}
     <Description>{description}</Description>
     {comment && <Comment>{comment}</Comment>}
-    {price && <Price price={price} />}
+    {price && <Price textPrice="Valor da hora" price={price} />}
     {buttonLink && <CardLink href={buttonLink}>{buttonTitle}</CardLink>}
   </ContainerCard>
 );

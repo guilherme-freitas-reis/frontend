@@ -5,6 +5,7 @@ export const ApiCalls = {
   listCategory: '/Veiculo/Categorias',
   selectCars: 'Veiculo/Categoria/',
   carDetails: 'Veiculo/GetById/',
+  sendSimulation: 'Locacao/Simular',
 };
 
 export const api: AxiosInstance = axios.create({
@@ -41,4 +42,17 @@ export interface CarDetails {
   modelo: string;
   motor: string;
   imagem: string;
+}
+export interface SimulationRequestBody{
+  veiculoId : number,
+  entrada: string,
+  saida : string,
+}
+export interface SimulationResponse{
+    veiculoId: number,
+    entrada: string,
+    saida: string,
+    valorSimulado: number,
+    totalHoras: number,
+    error?: string,
 }

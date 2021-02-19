@@ -1,23 +1,21 @@
-import { useState } from 'react';
 import { Select } from './StyleHora';
 import ListHoras from '../../../public/utils/ListHoras';
 
-const InputHora = () => {
-  const [selectOption, setSelectOption] = useState();
-
+interface IProps {
+  value: string;
+  // eslint-disable-next-line no-unused-vars
+  onChange: (arg: string) => void;
+}
+const InputHora = ({ value, onChange }:IProps) => {
   const handleChange = (event) => {
-    setSelectOption(event.target.value);
+    onChange(event.target.value);
   };
 
-  // // const handleSubmit = () => {
-  //   console.log(selectOption);
-  // };
-
   return (
-    <Select value={selectOption} onChange={handleChange}>
+    <Select disabled={!value} onChange={handleChange}>
       {
         ListHoras.map((hora) => (
-          <option value={hora.id}>{hora.repe}</option>
+          <option value={hora.repe}>{hora.repe}</option>
         ))
       }
     </Select>
