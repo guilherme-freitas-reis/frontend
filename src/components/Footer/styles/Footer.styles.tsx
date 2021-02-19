@@ -11,15 +11,15 @@ export const FooterContainer = styled.footer<IFooterContainer>`
   justify-content: space-between;
   background-color: ${(props) => props.backgroundColor};
   color: ${(props) => props.color};
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
 `;
 
 export const LogoLocaliza = styled.img`
   cursor: pointer;
-  height: 60px;
   width: auto;
   transition: 0.25s ease;
+  margin: 12px 0 12px 0;
 
   @media (max-width: 768px) {
     width: 200px;

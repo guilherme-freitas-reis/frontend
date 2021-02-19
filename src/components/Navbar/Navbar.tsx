@@ -12,8 +12,8 @@ import {
 } from './styles/Navbar.styles';
 
 const Navbar: FC = () => {
-  const [isLogged] = useState(true);
-  const [isOperador] = useState(true);
+  const [isLogged] = useState(false);
+  const [isOperador] = useState(false);
 
   return (
     <NavbarContainer className="container">
@@ -21,6 +21,7 @@ const Navbar: FC = () => {
         <Logo
           src={`${process.env.NEXT_PUBLIC_URL}/images/logo-nav.png`}
           alt="Localiza Logo"
+          height="65px"
         />
       </Link>
       <ActionsContainer>
