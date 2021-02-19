@@ -21,6 +21,7 @@ const Navbar: FC = () => {
         <Logo
           src={`${process.env.NEXT_PUBLIC_URL}/images/logo-nav.png`}
           alt="Localiza Logo"
+          height="65px"
         />
       </Link>
       <ActionsContainer>

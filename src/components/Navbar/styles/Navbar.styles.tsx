@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavbarContainer = styled.nav`
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +11,6 @@ export const NavbarContainer = styled.nav`
 
 export const Logo = styled.img`
   width: auto;
-  height: 90%;
   cursor: pointer;
   transition: opacity 0.3s;
 

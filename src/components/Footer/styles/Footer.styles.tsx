@@ -11,8 +11,8 @@ export const FooterContainer = styled.footer<IFooterContainer>`
   justify-content: space-between;
   background-color: ${(props) => props.backgroundColor};
   color: ${(props) => props.color};
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
 `;
 
 export const LogoLocaliza = styled.img`
