@@ -1,72 +1,44 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Card from '../../components/Card/Card';
 import Panel from '../../components/Panel/Panel';
+import { api } from '../../services/api';
+import IReservaProps from '../../types/Reserva';
 import Layout from '../Layout/Layout';
 import { ReservasList } from './styles/GerenciarReservas.styles';
 
-const GerenciarReservas: FC = () => (
-  <Layout>
-    <Panel title="Gerenciar Reservas">
-      <ReservasList>
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Realizar Devolução"
-          buttonLink="/reservas/devolucao/123"
-        />
-      </ReservasList>
-    </Panel>
-  </Layout>
-);
+const GerenciarReservas: FC = () => {
+  const [reservas, setReservas] = useState<IReservaProps[]>([]);
+
+  async function obterReservas() {
+    api.get<IReservaProps[]>('/Locacao/Reservas').then((response) => {
+      setReservas(response.data);
+    });
+  }
+
+  useEffect(() => {
+    obterReservas();
+  }, []);
+  return (
+    <Layout>
+      <Panel title="Gerenciar Reservas">
+        <ReservasList>
+          {reservas.length === 0 ? (
+            <h1>Nenhuma reserva encontrada.</h1>
+          ) : (
+            <h1>
+              {reservas.map((reserva) => {
+                <Card
+                  title={reserva.tipoVeiculoDescricao}
+                  image={reserva.imagem}
+                  description={reserva.modelo}
+                />;
+              })}
+            </h1>
+          )}
+        </ReservasList>
+      </Panel>
+    </Layout>
+  );
+};
 
 export default GerenciarReservas;
