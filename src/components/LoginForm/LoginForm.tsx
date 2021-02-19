@@ -3,16 +3,12 @@ import { FC } from 'react';
 import { IoMailOutline, IoKeyOutline } from 'react-icons/io5';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import { Container, LogoImage, SignUpText } from './styles/LoginForm.styles';
+import { Container, SignUpText } from './styles/LoginForm.styles';
 
 const LoginForm: FC = () => (
   <Container>
     <Link href="/">
-      <LogoImage
-        src="/images/localiza-logo-tp.png"
-        alt="localiza-logo"
-        height="35px"
-      />
+      <h1>Faça seu Login!</h1>
     </Link>
     <Input
       type="text"

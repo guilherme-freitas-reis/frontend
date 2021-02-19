@@ -11,4 +11,5 @@ export const Main = styled.main`
   flex-direction: column;
   flex: 1;
   background: #eee;
+  min-height: 70vh;
 `;
