@@ -1,6 +1,6 @@
 const ListHoras = [
   {
-    value:8,
+    value: 8,
     repe: '8:00',
   },
   {
