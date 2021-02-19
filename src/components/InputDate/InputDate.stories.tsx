@@ -6,6 +6,6 @@ export default {
   component: InputDate,
 } as Meta;
 
-const Template: Story = () => <InputDate placeholder="📅 Data de Retirada" />;
+const Template: Story = () => <InputDate onChange={(() => {})} value={new Date()} placeholder="📅 Data de Retirada" />;
 
 export const Padrao = Template.bind({});
