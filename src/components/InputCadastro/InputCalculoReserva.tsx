@@ -12,7 +12,6 @@ interface IProps {
 
 const InputCalculoReserva = ({ title, ...props } :IProps) => {
   const handleChangeHour = (hora:string) => {
-    console.log(hora);
     const newDate = new Date(props.value);
     const [hour, minutes] = hora.split(':');
     newDate.setHours(parseInt(hour, 10), parseInt(minutes, 10));

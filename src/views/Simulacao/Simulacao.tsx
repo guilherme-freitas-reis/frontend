@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-use-before-define
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
 import Price from '../../components/Card/components/Price/Price';
@@ -18,7 +18,10 @@ import {
 interface IProps {
   carDetails: CarDetails,
 }
-
+interface IfilterProps{
+  dataRetirada: Date,
+  dataDevolucao: Date
+}
 const SimulacaoReserva = ({ carDetails }:IProps) => {
   const [dataRetirada, setDataRetirada] = useState<Date>();
   const [dataDevolucao, setDataDevolucao] = useState<Date>();
@@ -38,6 +41,18 @@ const SimulacaoReserva = ({ carDetails }:IProps) => {
     e.preventDefault();
     getSimulation();
   };
+  useEffect(() => {
+    const getFilter = () => {
+      const filtro = sessionStorage.getItem('filtro');
+      if (filtro !== '') {
+        const tipoFilter:IfilterProps = JSON.parse(filtro);
+        setDataRetirada(new Date(tipoFilter.dataRetirada));
+        setDataDevolucao(new Date(tipoFilter.dataDevolucao));
+      }
+    };
+    getFilter();
+  }, []);
+
   return (
     <Layout>
       <Panel
