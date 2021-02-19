@@ -12,6 +12,7 @@ import {
   maskCNPJ,
   maskTelefone,
   maskNumber,
+  maskData,
 } from '../../utils/inputmasks';
 import { Icon, InputContainer, InputWrapper } from './styles/Input.styles';
 
@@ -22,7 +23,7 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   backgroundColor?: string;
   onFocusBackgroundColor?: string;
   placeholderColor?: string;
-  mask?: 'cpf' | 'cpnj' | 'cep' | 'telefone' | 'number';
+  mask?: 'cpf' | 'cpnj' | 'cep' | 'telefone' | 'number' | 'data';
 }
 
 const Input: FC<IInput> = ({
@@ -43,6 +44,7 @@ const Input: FC<IInput> = ({
     else if (mask === 'telefone') maskTelefone(e);
     else if (mask === 'cep') maskCEP(e);
     else if (mask === 'number') maskNumber(e);
+    else if (mask === 'data') maskData(e);
   }, [mask]);
 
   return (

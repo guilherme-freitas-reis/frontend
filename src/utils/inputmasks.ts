@@ -56,3 +56,15 @@ export function maskNumber(e: React.FormEvent<HTMLInputElement>) {
   e.currentTarget.value = keyInput;
   return e;
 }
+
+export function maskData(e: React.FormEvent<HTMLInputElement>) {
+  e.currentTarget.maxLength = 8 + 2;
+  let keyInput = e.currentTarget.value;
+
+  keyInput = keyInput.replace(/\D/g, '');
+  keyInput = keyInput.replace(/(^\d{2})(\d)/, '$1/$2');
+  keyInput = keyInput.replace(/(\d{2})(\d)/, '$1/$2');
+
+  e.currentTarget.value = keyInput;
+  return e;
+}

@@ -9,10 +9,10 @@ export const LoginPageWrapper = styled.div`
   /* background-color: #00a85a; */
 
   h1 {
-    color: #023b2a;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 20px;
+    color: #00a85a;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
   }
 
   button {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.form`
+export const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,16 +8,19 @@ export const Container = styled.form`
   background-color: #ffffff;
   padding: 25px;
   margin: 25px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 450px;
-  /* input[type="number"] {
-    -moz-appearance: textfield;
+
+  h1 {
+    color: #00a85a;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
   }
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  } */
+  button {
+    margin: 1rem 0 .8rem;
+  }
 `;
 
 export const SignUpText = styled.div`
