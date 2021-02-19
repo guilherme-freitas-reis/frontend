@@ -29,10 +29,10 @@ const Input: FC<IInput> = ({
   color,
   iconBefore,
   iconAfter,
-  mask,
-  placeholderColor = 'lightgray',
+  placeholderColor = '#999',
   onFocusBackgroundColor = 'white',
   backgroundColor = 'white',
+  mask,
   ...rest
 }) => {
   const [onFocus, setOnFocus] = useState(false);

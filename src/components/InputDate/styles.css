@@ -1,6 +1,6 @@
 .react-datepicker__header {
   background-color: #018b3d !important;
-  
+
 }
 .react-datepicker__current-month{
   color: white  !important ;
@@ -14,9 +14,17 @@
 .react-datepicker__input-container input {
   margin-right: 20px;
   height: 70px;
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,.2);
+  outline-color: #018b3d;
   text-align: center;
   padding: 0 15px;
   font-size: 1rem;
-} 
+  border-radius: 5px;
+}
 
+@media(max-width: 768px) {
+  .react-datepicker__input-container input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
