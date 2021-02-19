@@ -1,72 +1,45 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Card from '../../components/Card/Card';
 import Panel from '../../components/Panel/Panel';
+import { api } from '../../services/api';
+import IReservaProps from '../../types/Reserva';
 import Layout from '../Layout/Layout';
 import { ReservasList } from './styles/HistoricoReservas.styles';
 
-const HistoricoReservas: FC = () => (
-  <Layout>
-    <Panel title="Minhas Reservas">
-      <ReservasList>
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-        <Card
-          title="Econômico"
-          image="https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-          description="Veículo similar a Fiat Uno 1.0, dentre outros."
-          comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
-          buttonTitle="Ver Detalhes"
-          buttonLink="/reservas/historico/1232132/detalhes"
-        />
-      </ReservasList>
-    </Panel>
-  </Layout>
-);
+const HistoricoReservas: FC = () => {
+  const [reservas, setReservas] = useState<IReservaProps[]>([]);
+
+  async function obterReservas() {
+    api.get<IReservaProps[]>('/Locacao/Reserva/Cliente').then((response) => {
+      setReservas(response.data);
+    });
+  }
+
+  useEffect(() => {
+    obterReservas();
+  }, []);
+
+  return (
+    <Layout>
+      <Panel title="Minhas Reservas">
+        <ReservasList>
+          {reservas.length === 0 ? (
+            <div>Nenhuma reserva encontrada</div>
+          ) : (
+            <>
+              {reservas.map((reserva) => {
+                <Card
+                  title={reserva.tipoVeiculoDescricao}
+                  image={reserva.imagem}
+                  description={reserva.modelo}
+                />;
+              })}
+            </>
+          )}
+        </ReservasList>
+      </Panel>
+    </Layout>
+  );
+};
 
 export default HistoricoReservas;
