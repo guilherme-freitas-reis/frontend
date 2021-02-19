@@ -44,6 +44,9 @@ export const InputContainer = styled.input<IInputContainer>`
     color: ${(props) => props.placeholderColor};
   }
 
+  &:focus {
+    border-bottom: 1px solid gray;
+  }
 `;
 
 export const Icon = styled.span`
