@@ -6,9 +6,9 @@ import { format } from 'date-fns';
 
 registerLocale('pt-BR', ptBr);
 
- interface Props {
-   placeholder:string
- }
+interface Props {
+  placeholder:string
+}
 
 const InputDate = ({ placeholder }:Props) => {
   const [date, setDate] = useState<Date>();

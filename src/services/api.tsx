@@ -1,7 +1,13 @@
 import axios, { AxiosInstance } from 'axios';
 import cookie from 'react-cookies';
 
-const api: AxiosInstance = axios.create({
+export const ApiCalls = {
+  listCategory: '/Veiculo/Categorias',
+  selectCars: 'Veiculo/Categoria/',
+  carDetails: 'Veiculo/GetById/',
+};
+
+export const api: AxiosInstance = axios.create({
   baseURL: 'https://api-localiza.azurewebsites.net/api',
   headers: {
     Authorization: cookie.load('localiza-auth') || '',
@@ -11,4 +17,28 @@ const api: AxiosInstance = axios.create({
   },
 });
 
-export { api };
+// ApiTypes
+
+export interface CategoryDetails {
+  id: number
+  value: string
+}
+
+export interface CarDetails {
+  id: number,
+  placa: string;
+  ano: string;
+  valorHora: number;
+  limitePortaMalas: number;
+  tipoDeCombustivel: number;
+  combustivelDescricao: string;
+  tipoDeVeiculo: number;
+  tipoVeiculoDescricao: string;
+  kilometragem: number;
+  marcaId: number;
+  marca: string;
+  modeloId: number;
+  modelo: string;
+  motor: string;
+  imagem: string;
+}
