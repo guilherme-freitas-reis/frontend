@@ -158,8 +158,8 @@ const CriarContaForm: FC = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
+      <SignInTitle>Crie sua Conta!</SignInTitle>
       <FormWrapper>
-        <SignInTitle>Crie sua Conta!</SignInTitle>
         <div>
           <Input
             iconBefore={<IoHappyOutline size={20} />}
@@ -296,6 +296,8 @@ const CriarContaForm: FC = () => {
             onChange={(event) => setEstado(event.target.value)}
           />
         </div>
+      </FormWrapper>
+      <div style={{ width: '100%' }}>
         <Button loading={loading} block>
           Criar Conta
         </Button>
@@ -303,7 +305,7 @@ const CriarContaForm: FC = () => {
           <h2>Já possui uma conta?</h2>
           <Link href="/login">Faça Login.</Link>
         </SignUpText>
-      </FormWrapper>
+      </div>
     </Form>
   );
 };
