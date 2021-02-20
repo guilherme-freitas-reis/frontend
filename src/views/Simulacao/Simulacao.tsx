@@ -1,12 +1,17 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
 import Price from '../../components/Card/components/Price/Price';
 import InputCalculoReserva from '../../components/InputCadastro/InputCalculoReserva';
 import Panel from '../../components/Panel/Panel';
 import {
-  api, ApiCalls, CarDetails, SimulationRequestBody, SimulationResponse,
+  api,
+  ApiCalls,
+  CarDetails,
+  SimulationRequestBody,
+  SimulationResponse,
 } from '../../services/api';
 import Layout from '../Layout/Layout';
 import {
@@ -16,16 +21,17 @@ import {
 } from './styles/Simulacao.styles';
 
 interface IProps {
-  carDetails: CarDetails,
+  carDetails: CarDetails;
 }
-interface IfilterProps{
-  dataRetirada: Date,
-  dataDevolucao: Date
+interface IfilterProps {
+  dataRetirada: Date;
+  dataDevolucao: Date;
 }
-const SimulacaoReserva = ({ carDetails }:IProps) => {
+const SimulacaoReserva = ({ carDetails }: IProps) => {
   const [dataRetirada, setDataRetirada] = useState<Date>();
   const [dataDevolucao, setDataDevolucao] = useState<Date>();
   const [simulationValue, setSimulationValue] = useState<SimulationResponse>();
+  const router = useRouter();
 
   const getSimulation = async () => {
     const requestBody: SimulationRequestBody = {
@@ -37,19 +43,31 @@ const SimulacaoReserva = ({ carDetails }:IProps) => {
     const simulationResult: SimulationResponse = res.data;
     setSimulationValue(simulationResult);
   };
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    getSimulation();
+    if (!simulationValue) {
+      getSimulation();
+    } else {
+      sessionStorage.setItem('dadosReserva', JSON.stringify({
+        dataRetirada,
+        dataDevolucao,
+        valorSimulado: simulationValue.valorSimulado,
+      }));
+      router.push(`/finalizar-reserva/${carDetails.id}`);
+    }
   };
+
   useEffect(() => {
     const getFilter = () => {
       const filtro = sessionStorage.getItem('filtro');
-      if (filtro !== '') {
-        const tipoFilter:IfilterProps = JSON.parse(filtro);
+      if (filtro) {
+        const tipoFilter: IfilterProps = JSON.parse(filtro);
         setDataRetirada(new Date(tipoFilter.dataRetirada));
         setDataDevolucao(new Date(tipoFilter.dataDevolucao));
       }
     };
+
     getFilter();
   }, []);
 
@@ -57,14 +75,14 @@ const SimulacaoReserva = ({ carDetails }:IProps) => {
     <Layout>
       <Panel
         title="Simulação de Reserva"
-        subTitle="Preencha todos os campos para evetuar a reserva"
+        subTitle="Preencha todos os campos para simular a sua reserva"
       >
         <ContainerForm>
           <Card
-            title={carDetails.modelo}
+            title={`${carDetails.tipoVeiculoDescricao} - ${carDetails.modelo}`}
             image={carDetails.imagem}
-            description={carDetails.tipoVeiculoDescricao}
-            comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
+            description={`Combustível: ${carDetails.combustivelDescricao}, Potência: ${carDetails.motor}, Porta Malas: ${carDetails.limitePortaMalas} litros, Placa: ${carDetails.placa}`}
+            comment="Para realizar a simulação, preencha as datas de retirada e devolução."
           />
           <Form>
             <div>
@@ -84,11 +102,15 @@ const SimulacaoReserva = ({ carDetails }:IProps) => {
               )}
             </div>
             {simulationValue && (
-              <Price textPrice="Valor da Reserva" price={simulationValue.valorSimulado} />
+              <Price
+                textPrice="Valor da Reserva"
+                price={simulationValue.valorSimulado}
+                typePrice="/ total"
+              />
             )}
             <ButtonContainer>
               <Button disabled={!dataDevolucao} onClick={handleClick} block>
-                { !simulationValue ? 'Simular Reserva' : 'Reservar'}
+                {!simulationValue ? 'Simular Reserva' : 'Reservar'}
               </Button>
             </ButtonContainer>
           </Form>

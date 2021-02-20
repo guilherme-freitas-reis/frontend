@@ -17,7 +17,7 @@ const GrupoCarros: FC = () => (
           description="Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0, dentre outros."
           comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
           buttonTitle="Ver Veículos disponíveis"
-          buttonLink="/grupo-de-carros/BASICO"
+          buttonLink="/grupo-de-carros/basico"
         />
         <Card
           title="Intermediário"
@@ -25,7 +25,7 @@ const GrupoCarros: FC = () => (
           description="Veículo similar a: GM Prisma 1.4, Ford Ka Sedan 1.5, Renault Logan 1.6, dentre outros."
           comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
           buttonTitle="Ver Veículos disponíveis"
-          buttonLink="/grupo-de-carros/COMPLETO"
+          buttonLink="/grupo-de-carros/completo"
         />
         <Card
           title="Luxo"
@@ -33,7 +33,7 @@ const GrupoCarros: FC = () => (
           description="Veículo similar a: Audi A4 TFSI, Novo Ford Fusion, dentre outros."
           comment="Sua reserva garante um dos carros desse grupo. Modelo sujeito à disponibilidade da agência."
           buttonTitle="Ver Veículos disponíveis"
-          buttonLink="/grupo-de-carros/LUXO"
+          buttonLink="/grupo-de-carros/luxo"
         />
       </CategoriasList>
     </Panel>

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { FC, useContext, useState } from 'react';
 import { IoMailOutline, IoKeyOutline } from 'react-icons/io5';
 import { store } from 'react-notifications-component';
-import axios from 'axios';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import { api } from '../../services/api';
@@ -35,7 +34,6 @@ const LoginForm: FC = () => {
 
       if (response.status === 200) {
         salvarToken(response.data.token);
-        axios.defaults.headers.common.Authorization = response.data.token;
 
         if (isOperador) { salvarRole('0'); } else { salvarRole('1'); }
 

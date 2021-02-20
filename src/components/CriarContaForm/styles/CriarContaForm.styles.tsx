@@ -11,6 +11,12 @@ export const Form = styled.form`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 450px;
 
+  @media(max-width: 768px) {
+    width: 100%;
+    margin: 20px 0;
+    min-width: unset;
+  }
+
   h1 {
     color: #00a85a;
     font-size: 1.8rem;
