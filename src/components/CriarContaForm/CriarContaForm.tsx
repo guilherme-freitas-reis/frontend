@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import {
   IoDocumentTextOutline,
   IoHappyOutline,
@@ -12,7 +12,9 @@ import {
   IoLocationOutline,
 } from 'react-icons/io5';
 import { store } from 'react-notifications-component';
+import { Context } from '../../contexts/AuthContext';
 import { api } from '../../services/api';
+import { salvarRole, salvarToken } from '../../utils/crypto';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import {
@@ -37,6 +39,7 @@ const CriarContaForm: FC = () => {
   const [cidade, setCidade] = useState('');
 
   const [loading, setLoading] = useState(false);
+  const { handleLogin } = useContext(Context);
 
   async function handleSubmit(e: any): Promise<void> {
     e.preventDefault();
@@ -88,6 +91,18 @@ const CriarContaForm: FC = () => {
           estado,
         },
       });
+
+      const responseLogin = await api.post('/Account/login', {
+        usuario: CPF,
+        senha,
+      });
+
+      salvarToken(responseLogin.data.token);
+
+      salvarRole('1');
+
+      handleLogin();
+
       setLoading(false);
 
       if (response.status === 200) {
