@@ -110,7 +110,7 @@ const SimulacaoReserva = ({ carDetails }: IProps) => {
             )}
             <ButtonContainer>
               <Button disabled={!dataDevolucao} onClick={handleClick} block>
-                {!simulationValue ? 'Simular Reserva' : 'Reservar'}
+                {!simulationValue ? 'SIMULAR RESERVA' : 'RESERVAR VEÍCULO'}
               </Button>
             </ButtonContainer>
           </Form>

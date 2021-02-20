@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
 export const FormWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 20px;
+  display: flex;
+
+  > div {
+    margin: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const Form = styled.form`
@@ -17,7 +24,7 @@ export const Form = styled.form`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 450px;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
     margin: 20px 0;
     min-width: unset;
@@ -31,7 +38,7 @@ export const Form = styled.form`
   }
 
   button {
-    margin: 1rem 0 .8rem;
+    margin: 1rem 0 0.8rem;
   }
 `;
 
@@ -47,17 +54,18 @@ export const SignUpText = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 
   h2 {
     color: #023b2a;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 400px;
     margin: 12px;
   }
 
   a {
     color: #00a85a;
-    font-size: .9rem;
+    font-size: 0.9rem;
 
     &:hover {
       text-decoration: underline;
