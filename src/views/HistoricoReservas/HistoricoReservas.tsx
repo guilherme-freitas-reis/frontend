@@ -27,13 +27,17 @@ const HistoricoReservas: FC = () => {
             <div>Nenhuma reserva encontrada</div>
           ) : (
             <>
-              {reservas.map((reserva) => {
+              {reservas.map((reserva) => (
                 <Card
-                  title={reserva.tipoVeiculoDescricao}
+                  key={reserva.marcaId}
+                  title={`${reserva.tipoVeiculoDescricao} - ${reserva.modelo}`}
                   image={reserva.imagem}
-                  description={reserva.modelo}
-                />;
-              })}
+                  description={`Combustível: ${reserva.combustivelDescricao}, Potência: ${reserva.motor}, Porta Malas: ${reserva.limitePortaMalas} litros, Placa: ${reserva.placa}`}
+                  comment="Clique no botão abaixo para preencher o checklist de devolução"
+                  buttonTitle="REALIZAR DEVOLUÇÃO"
+                  buttonLink={`/reservas/devolucao/${reserva.clienteId}`}
+                />
+              ))}
             </>
           )}
         </ReservasList>
