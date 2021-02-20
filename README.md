@@ -1,56 +1,60 @@
-## Desafio Localiza
+#  Desafio Localiza
 
-Clear documentation is critical to the success of your project. This checklist is meant to help you cover all your bases. Not every section/subsection will be relevant to your project; pick and choose what is. Inspired by READMEs of very successful projects like etcd.
+## 🏗 Objetivo do Projeto
 
-Please copy-paste this into a new document and save as you build your READMEs. For alternative formats, you might create a [Structured README](https://github.com/shaloo/structuredreadme), which offers a thorough breakdown of optional README ingredients for you to consider. You might also take a look at [this similar checklist](https://github.com/cfpb/open-source-project-template); or check out [art-of-readme](https://github.com/noffle/art-of-readme).
+Este projeto tem como objetivo apresentar-se como aplicação final dos conhecimentos aprendidos durante o curso da GAMA Academy - como parte do processo de seleção de desenvolvedores front-end da Localiza - e como recurso para a avaliação final. O projeto foi implementado com tecnologias e práticas de desenvolvimento aprendidas durante o curso e que serão listadas abaixo.
 
-### Project Name/Intro
+### 🏡 Introdução
 
-- Describe very briefly but clearly what the project does.
-- State if it is out-of-the-box user-friendly, so it’s clear to the user.
-- List its most useful/innovative/noteworthy features.
-- State its goals/what problem(s) it solves.
-- Note and briefly describe any key concepts (technical, philosophical, or both) important to the user’s understanding.
-- Link to any supplementary blog posts or project main pages.
-- Note its development status.
-- Include badges.
-- If possible, include screenshots and demo videos.
+O projeto:
+- Deve ser um site de aluguel de carros - assim como o da Localiza - com simulação do aluguel, baseado nas datas e horários selecionados, carros, com páginas de cadastro e login para o usuário e o operador. Mais detalhes:
+  - Reserva baseada em data/horário de retirada
+  - Visualização do grupo de carros
+  - Login e cadastro
+  - Simulação de reserva com preço final
+- Deve ter boas noções de UI/UX.
+- Deve possuir modularidade e reutilização de componentes
 
-### Core Technical Concepts/Inspiration
+Status de desenvolvimento e acesso:
+- O site foi hospedado pela Vercel e;
+- Para acessar o site do projeto siga o link: https://localiza.vercel.app/
+- Também pode ser clonado pelo repositório no GitHub, instalar as dependências usando yarn, e então rodar no modo de desenvolvedor com yarn run dev
 
-- Why does it exist?
-- Frame your project for the potential user.
-- Compare/contrast your project with other, similar projects so the user knows how it is different from those projects.
-- Highlight the technical concepts that your project demonstrates or supports. Keep it very brief.
-- Keep it useful.
+### 🚨 Requisitos de desenvolvimento
 
-### Getting Started/Requirements/Prerequisites/Dependencies
-Include any essential instructions for:
-- Getting it
-- Installing It
-- Configuring It
-- Running it
+O projeto:
+- Deve ser desenvolvido usando a biblioteca ReactJS, com as funcionalidades aprendidas no curso (hooks, estilização, requests, etc.);
+- Deve ser desenvolvido usando linguagem de programação TypeScript; 
+- Utilizou Git para gerenciamento e versionamento de código, com repositório no GitHub;
+- Deve usar StoryBook para criar um histórico e visualização dos componentes separadamente;
+- Deve usar as funcionalidades do NextJS para geração do website e Server-Side Rendering;
+- Deve ser responsivo;
+- Deve ter testes com Jest
 
-### More Specific Topics (+ sample sub-categories)
-- Versioning: Services, APIs, Systems
-- Common Error Messages/related details
-- Tests
-- Is it a Swift project? Please take a look at Mattt Thompson & Nate Cook's [Swift documentation](http://nshipster.com/swift-documentation/) guide
+### 🧷 Dependências utilizadas
+- Styled-Components
+- Axios para HTTP Requests
+- Linter: ESLint
+- React DatePicker, Icons, Notifications, 
+- Husky para Git Hooks
+- Jest para testes
+- Editor config para padronização de código entre colaboradores
 
-### Contributing
-- Contributor Guidelines
-- Code Style/Requirements
-- Format for commit messages
-- Thank you (name contributors)
+### 🎁 Extras
+- Code Style: ESLint (Airbnb)
+- Formato para mensagens de commit (Semantic commits): https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+- API de carros, reserva, login/cadastro fornecido pelo pessoal do backend
 
-### TODO
-- Next steps
-- Features planned
-- Known bugs (shortlist)
+- Mais detalhes ❔
 
-### Contact
-- Email address
-- Google Group/mailing list (if applicable)
-- IRC or Slack (if applicable)
+### ❗ TODO
+- Adicionar testes
+- Bugs conhecidos:
+  - Seletor de data de devolução não desabilita datas iguais ou passadas da data de retirada (causa preços negativos)
+  - Outros bugs ❔
+- Planos de mais features ❔
 
-### License
+### 👨‍👨‍👧‍👧 Envolvidos (front-end)
+- Filipe Barbosa
+- Guilherme Reis
+- Lucas Barbosa
