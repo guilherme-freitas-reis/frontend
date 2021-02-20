@@ -11,11 +11,16 @@ export const ApiCalls = {
 export const api: AxiosInstance = axios.create({
   baseURL: 'https://api-localiza.azurewebsites.net/api',
   headers: {
-    Authorization: obterToken() || '',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
     'Content-Type': 'application/json',
   },
+});
+
+api.interceptors.request.use((config) => {
+  // eslint-disable-next-line no-param-reassign
+  config.headers.Authorization = obterToken();
+  return config;
 });
 
 // ApiTypes

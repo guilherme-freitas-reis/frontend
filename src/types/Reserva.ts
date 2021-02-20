@@ -1,4 +1,5 @@
 interface IReservaProps {
+  id: number;
   totalHoras: number;
   clienteId: number;
   dataLocacao: Date;

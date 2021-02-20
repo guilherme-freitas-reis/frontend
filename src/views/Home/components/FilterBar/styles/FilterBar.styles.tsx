@@ -6,7 +6,7 @@ export const FilterBarContainer = styled.div`
   z-index: 999;
   left: 15%;
   bottom: -115px;
-  padding: 10px;
+  padding: 20px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);

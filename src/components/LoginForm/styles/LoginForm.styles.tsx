@@ -10,6 +10,24 @@ export const Container = styled.form`
   margin: 25px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.1);
   min-width: 450px;
+
+  h1 {
+    color: #00a85a;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
+  }
+
+  button {
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+
+  @media(max-width: 768px) {
+    width: 100%;
+    margin: 0;
+    min-width: unset;
+  }
   /* input[type="number"] {
     -moz-appearance: textfield;
   }
@@ -24,6 +42,14 @@ export const SignUpText = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  a {
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 
   h2 {
     color: #023b2a;

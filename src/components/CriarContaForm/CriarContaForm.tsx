@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import {
   IoDocumentTextOutline,
   IoHappyOutline,
@@ -7,7 +7,9 @@ import {
   IoCalendarClearOutline,
 } from 'react-icons/io5';
 import { store } from 'react-notifications-component';
+import { Context } from '../../contexts/AuthContext';
 import { api } from '../../services/api';
+import { salvarRole, salvarToken } from '../../utils/crypto';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import { Form, SignUpText } from './styles/CriarContaForm.styles';
@@ -20,6 +22,7 @@ const CriarContaForm: FC = () => {
   const [diaDeNascimento, setDiaDeNascimento] = useState('');
 
   const [loading, setLoading] = useState(false);
+  const { handleLogin } = useContext(Context);
 
   async function handleSubmit(e: any): Promise<void> {
     e.preventDefault();
@@ -63,6 +66,18 @@ const CriarContaForm: FC = () => {
         diaDeNascimento,
         tipoUsuario: 1,
       });
+
+      const responseLogin = await api.post('/Account/login', {
+        usuario: CPF,
+        senha,
+      });
+
+      salvarToken(responseLogin.data.token);
+
+      salvarRole('1');
+
+      handleLogin();
+
       setLoading(false);
 
       if (response.status === 200) {
