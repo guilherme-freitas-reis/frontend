@@ -10,7 +10,6 @@ const FilterBar: FC = () => {
   const [dataRetirada, setDataRetirada] = useState<Date>();
   const [dataDevolucao, setDataDevolucao] = useState<Date>();
   const submitForm = () => {
-    // e.preventDefault();
     if (!dataRetirada || !dataDevolucao) {
       return;
     }
@@ -39,7 +38,9 @@ const FilterBar: FC = () => {
             />
           )}
         </div>
-        <ButtonSearch disabled={!dataDevolucao}>Buscar</ButtonSearch>
+        <ButtonSearch disabled={!dataDevolucao}>
+          Buscar
+        </ButtonSearch>
       </Form>
     </FilterBarContainer>
   );

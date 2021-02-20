@@ -5,9 +5,8 @@ export const FilterBarContainer = styled.div`
   position: absolute;
   z-index: 999;
   left: 15%;
-  bottom: -45px;
+  bottom: -115px;
   padding: 10px;
-  height: 90px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
@@ -30,11 +29,8 @@ export const FilterBarContainer = styled.div`
 
 export const Form = styled.form`
   display: flex;
+  flex-direction: column;
   flex: 1;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 `;
 
 export const InputFake = styled.input`
@@ -50,7 +46,8 @@ export const InputFake = styled.input`
 `;
 
 export const ButtonSearch = styled.button`
-  width: 120px;
+  width: 100%;
+  height: 55px;
   background: #ff6b00;
   color: #fff;
   outline: none;

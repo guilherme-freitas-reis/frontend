@@ -4,7 +4,7 @@ export const BannerContainer = styled.main`
   display: flex;
   background: #00a85a;
   height: auto;
-  min-height: 55vh;
+  min-height: 60vh;
   position: relative;
 
   @media (max-width: 1000px) {
