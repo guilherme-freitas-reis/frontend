@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const FormWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+`;
+
 export const Form = styled.form`
   display: flex;
   align-items: center;
@@ -27,6 +33,14 @@ export const Form = styled.form`
   button {
     margin: 1rem 0 .8rem;
   }
+`;
+
+export const SignInTitle = styled.p`
+  color: #00a85a;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1rem 0 2rem;
+  grid-column: 1 / 3;
 `;
 
 export const SignUpText = styled.div`
